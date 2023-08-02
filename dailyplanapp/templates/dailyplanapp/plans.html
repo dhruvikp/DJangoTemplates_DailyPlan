@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <h1>Hello Simplilearn!</h1>
+    <h2>This is Daily Diet Plan Application </h2>
+    <h3></h3>
+    <ul>
+        {% for day in days %}
+            <li>
+                <a href=" {% url 'daily-diet' day %}">
+                    {{ day | title }}
+                </a>
+            </li>
+        {% endfor %}
+        </ul>
+
+</body>
+</html>
