@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block css_files %}
+    <link rel="stylesheet" href="{% static 'reviewapp/styles.css' %}">
+{% endblock css_files %}
+
+{% block content %}
+    <form action="form" method="post">
+        {% csrf_token %}
+        
+        {% for field in form %}
+
+        <div class="form-control">
+            {{field.label_tag}}
+            {{field}}
+        </div>
+        {% endfor %}
+
+        <button type="submit"> Send </button>
+
+    </form>
+{% endblock content %}

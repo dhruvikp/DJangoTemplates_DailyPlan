@@ -1,20 +1,16 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    
-    <h1> Plan for Date {{ day | title }} </h1>
+{% extends 'base.html' %}
 
-    {% if plan is not None %}
-        <h4> {{plan | title}} </h4>
-    {% else %}
-        <h4>There is no plan for this date yet. </h4>
-    {% endif %}
+{% block page_title %} Plan for {{day | title}} {% endblock page_title %}
 
-    
-</body>
-</html>
+{% block content %}
+
+{% include "dailyplanapp/header.html" %}
+
+<h1> Plan for Date {{ day | title }} </h1>
+
+{% if plan is not None %}
+    <h4> {{plan | title}} </h4>
+{% else %}
+    <h4>There is no plan for this date yet. </h4>
+{% endif %}
+{% endblock content %}

@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <p> Thanks for submitting feedback! </p>
+
+    <h1>:: List of all Feedbacks :: </h1>
+    <ul>
+        {% for rev in review %}
+            <li> {{rev.user_name}} : {{rev.review_text}} - {{rev.rating}} </li>
+        {% endfor %}
+    </ul>
+{% endblock content %}
+
+
